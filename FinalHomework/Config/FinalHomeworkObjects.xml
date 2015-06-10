@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="UsersController" scope="request" singleton="false" type="FinalHomework.Controllers.UsersController, FinalHomework">
+    <property name="UsersService" ref="UsersService" />
+  </object>
+
+  <object id="UsersService" type="Core.Services.User.UsersService, Core">
+    <property name="UsersDao" ref="UsersDao" />
+  </object>
+
+  <object id="UsersDao" type="Core.Dao.Impl.UsersDao, Core">
+    <property name="AdoTemplate" ref="adoTemplate" />
+  </object>
+
+</objects>
