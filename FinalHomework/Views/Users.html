@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Employee</title>
+    <title>Users</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
@@ -24,22 +24,22 @@
                     dataType: "jsonp",
                     transport: {
                         read: {
-                            url: UrlBase+"api/Course",
+                            url: UrlBase + "api/Users",
                             contentType: "application/json; charset=utf-8",
                             type: "GET"
                         },
                         create: {
-                            url: UrlBase+"api/Course",
+                            url: UrlBase + "api/Users",
                             contentType: "application/json; charset=utf-8",
                             type: "POST"
                         },
                         update: {
-                            url: UrlBase+"api/Course",
+                            url: UrlBase + "api/Users",
                             contentType: "application/json; charset=utf-8",
                             type: "PUT"
                         },
                         destroy: {
-                            url: UrlBase + "api/Course",
+                            url: UrlBase + "api/Users",
                             contentType: "application/json; charset=utf-8",
                             type: "DELETE"
                         },
@@ -51,11 +51,18 @@
                     },
                     schema: {
                         model: {
-                            id: "Id",
+                            id: "ID",
                             fields: {
-                                Id  : { type: "string", editable: true, nullable: false },
-                                Name: { type: "string", editable: true, nullable: false },
-                                Description : { type: "string", editable: true }
+                                ID: { type: "string", editable: false, nullable: false },
+                                Name: { type: "string", editable: false, nullable: false },
+                                NickName: { type: "string", editable: true, nullable: false },
+                                Birthday: { type: "date", editable: true, nullable: false },
+                                Gender: { type: "string", editable: false, nullable: false },
+                                Phone: { type: "string", editable: true, nullable: false },
+                                Address: { type: "string", editable: true, nullable: false },
+                                Height: { type: "string", editable: true, nullable: false },
+                                Weight: { type: "string", editable: true, nullable: false },
+                                Description: { type: "string", editable: true }
                             }
                         }
                     }
@@ -73,9 +80,16 @@
                     numeric: false
                 },
                 columns: [
-                    { field: "Id"  , title: "課程編號" , width: "100px" },
-                    { field: "Name", title: "課程名稱", width: "100px" },
-                    { field: "Description", title: "課程描述", width: "160px" },
+                    { field: "ID", title: "編號", width: "120px" },
+                    { field: "Name", title: "名稱", width: "120px" },
+                    { field: "NickName", title: "別名", width: "120px" },
+                    { field: "Birthday", title: "生日", width: "120px" },
+                    { field: "Gender", title: "性別", width: "120px" },
+                    { field: "Phone", title: "手機", width: "120px" },
+                    { field: "Address", title: "地址", width: "120px" },
+                    { field: "Height", title: "身高", width: "120px" },
+                    { field: "Weight", title: "體重", width: "120px" },
+                    { field: "Description", title: "使用者描述", width: "160px" },
                     { command: ["edit", "destroy"], title: "Command", width: "250px" }
                 ]
             });
