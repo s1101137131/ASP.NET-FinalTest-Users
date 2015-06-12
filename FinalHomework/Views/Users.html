@@ -53,15 +53,15 @@
                         model: {
                             id: "ID",
                             fields: {
-                                ID: { type: "string", editable: false, nullable: false },
-                                Name: { type: "string", editable: false, nullable: false },
-                                NickName: { type: "string", editable: true, nullable: false },
-                                Birthday: { type: "date", editable: true, nullable: false },
-                                Gender: { type: "string", editable: false, nullable: false },
-                                Phone: { type: "string", editable: true, nullable: false },
-                                Address: { type: "string", editable: true, nullable: false },
-                                Height: { type: "string", editable: true, nullable: false },
-                                Weight: { type: "string", editable: true, nullable: false },
+                                ID: { type: "string", editable: true, nullable: false },
+                                Name: { type: "string", editable: true, nullable: false },
+                                NickName: { type: "string", editable: true, nullable: true },
+                                Birthday: { type: "date", editable: true, nullable: true },
+                                Gender: { type: "string", editable: true, nullable: false },
+                                Phone: { type: "string", editable: true, nullable: true },
+                                Address: { type: "string", editable: true, nullable: true },
+                                Height: { type: "string", editable: true, nullable: true },
+                                Weight: { type: "string", editable: true, nullable: true },
                                 Description: { type: "string", editable: true }
                             }
                         }
